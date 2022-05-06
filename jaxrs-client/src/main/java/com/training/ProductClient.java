@@ -7,6 +7,7 @@ public class ProductClient {
 
 	public static void main(String[] args) {
 		
+		char ch;
 		
 		Client client = ClientBuilder.newClient();
 		WebTarget target = client.target("http://localhost:8080/products");
@@ -15,6 +16,19 @@ public class ProductClient {
 //		ProductClient object = resp.readEntity(ProductClient.class);
 //		System.out.println(object);
 		
+		
+		if(ch==2) {
+			WebTarget findByIdTarget = target.path("/srch/101");
+			Invocation.Builder builder2 = findByIdTarget.request(MediaType.APPLICATION_JSON);
+			System.out.println(object2);
+			
+		}
+		if(ch==3) {
+			Product toAdd = new Product(528, "ups", 466);
+			Response response = builder.post(Entity.entity(toAdd,MediaType.APPLICATION_JSON));
+			System.out.println(object3);
+			
+		}
 	}
 
 }
