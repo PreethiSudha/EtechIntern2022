@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -87,5 +88,43 @@ public class DriverController {
 		this.service.removeById(id);
 		return ResponseEntity.ok().body("One Entity Deleted");
 	}
+	
+	
+	@GetMapping(path="/drivers/srch/mobile/{mobileNumber}")
+	public List<Driver> getDriverByMobileNumber(@PathVariable("mobileNumber") long number){
+		return this.service.srchByMobileNumber(number);
+	}
+	
+	@GetMapping(path="/drivers/srch/rating/{rating}")
+	public List<Driver> getDriverByRating(@PathVariable("rating") double rating){
+		return this.service.srchByMobileNumber(rating);
+	}
+	
+	@PutMapping(path="/drivers/{id}/{updatedRating}")
+	public ResponseEntity<String> updatedRating(@PathVariable("id")int id , 
+												@PathVariable("updatedRating")double updatedRating){
+		this.service.updatedRating(id, updatedRating);
+		return ResponseEntity.status(200).body("One Entity Updated");
+	}
 		
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -61,5 +61,42 @@ public class DriverService {
 	public void removeById(int id) {
 		repo.deleteById(id);
 	}
+	
+	
+	public List<Driver> findByDriverName(String srchName){
+		return this.repo.findByDriverName(srchName);
+	}
 
+	public List<Driver> srchByMobileNumber(long number){
+		return this.repo.findByMobileNumber(number);
+	}
+	
+	public List<Driver> srchByMobileNumber(double rating){
+		return this.repo.searchByRating(rating);
+	}
+	
+	public int updatedRating(int id, double updatedRating ) {
+		int rowsUpdated = 0;
+		this.repo.modifyRating(id, updatedRating);
+		return rowsUpdated;
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

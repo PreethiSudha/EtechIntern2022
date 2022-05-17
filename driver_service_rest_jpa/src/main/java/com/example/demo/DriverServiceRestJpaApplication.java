@@ -10,7 +10,11 @@ import org.springframework.context.annotation.Bean;
 import com.example.demo.entity.Driver;
 import com.example.demo.repos.DriverRepository;
 
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
+
 @SpringBootApplication
+@OpenAPIDefinition(info = @Info(title="Driver Service API" , version = "1.0"))
 public class DriverServiceRestJpaApplication {
 
 	public static void main(String[] args) {
@@ -18,7 +22,7 @@ public class DriverServiceRestJpaApplication {
 				SpringApplication.run(DriverServiceRestJpaApplication.class, args);
 
 				//we could not close this spring boot application , 
-				//if we do so we cant able to run the code in the web
+				//if we do so we cant able to run the code in the web browser
 	}
 
 	@Bean
