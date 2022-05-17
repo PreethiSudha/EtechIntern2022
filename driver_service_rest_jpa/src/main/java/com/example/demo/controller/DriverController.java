@@ -106,7 +106,11 @@ public class DriverController {
 		this.service.updatedRating(id, updatedRating);
 		return ResponseEntity.status(200).body("One Entity Updated");
 	}
-		
+	
+	@GetMapping(path="/drivers/sort/{propName}")
+	public List<Driver> getDriverByName(@PathVariable("propName") String propName){
+		return this.service.sortedList(propName);	
+	}
 }
 
 
