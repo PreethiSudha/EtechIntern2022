@@ -1,11 +1,14 @@
 package com.example.demo.entity;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,7 +26,8 @@ public class TripHistory {
 	@Column(name="trip_id")
 	int tripId;
 	@Column(name="trip_date_time")
-	LocalDate tripDateTime;
+	LocalDateTime tripDateTime;
+	@DateTimeFormat(iso=ISO.DATE_TIME)
 	@Column(name="source")
 	String source;
 	@Column(name="destination")

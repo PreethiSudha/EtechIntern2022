@@ -35,6 +35,6 @@ public class Passenger {
 	
 	@OneToMany(targetEntity=TripHistory.class,fetch=FetchType.EAGER,cascade=CascadeType.ALL)
 	@JoinColumn(name="passenger_ref" , referencedColumnName="passenger_id")
-	List<TripHistory> triplist;
+	List<TripHistory> tripList;
 	
 }

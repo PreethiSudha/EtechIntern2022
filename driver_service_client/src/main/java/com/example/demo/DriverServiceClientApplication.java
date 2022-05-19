@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.Bean;
+import org.springframework.http.client.support.BasicAuthenticationInterceptor;
 import org.springframework.web.client.RestTemplate;
 
 import com.example.demo.model.Driver;
@@ -21,25 +22,39 @@ public class DriverServiceClientApplication {
 		System.out.println(client.invokeGetAll());
 		
 		Driver[] list = client.invokeAllAsObject();
+//		
+//		for(Driver eachDriver:list) {
+//			
+//			System.out.println("Driver Name:" +eachDriver.getDriverName());
+//			System.out.println("Mobile Number:" +eachDriver.getMobileNumber());
+//			System.out.println("Rating:" +eachDriver.getRating());
+//		}
 		
-		for(Driver eachDriver:list) {
-			
-			System.out.println("Driver Name:" +eachDriver.getDriverName());
-			System.out.println("Mobile Number:" +eachDriver.getMobileNumber());
-			System.out.println("Rating:" +eachDriver.getRating());
-		}
+		//for user we will not use driver things
 		
 		ctx.close();
 		
-		//DriverServiceClientApplication it runs in port 8080
+		//DriverServiceClientApplication runs in port 8080
 		//two code cant run in the same port simultaneously
 		//so we must change the port number before running it
 		//but we don't terminate or stop the program which is running on the server side
 		//here, client is - whom made a get request
 	}
 
+//	@Bean
+//	public RestTemplate template() {
+//		return new RestTemplate();
+//	}
+	
 	@Bean
 	public RestTemplate template() {
-		return new RestTemplate();
+		RestTemplate template = new RestTemplate();
+		template.getInterceptors().add(interceptor());
+		return template;	
+	}
+	
+	@Bean
+	public BasicAuthenticationInterceptor interceptor() {
+		return new BasicAuthenticationInterceptor("india" , "India");
 	}
 }
