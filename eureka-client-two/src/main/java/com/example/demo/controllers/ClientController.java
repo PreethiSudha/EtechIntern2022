@@ -24,4 +24,9 @@ public class ClientController {
 		public String getBooks() {
 		return this.template.getForObject(baseURL+"/books", String.class); 
 	}
+	
+	@GetMapping(path="/client/books/{id}")
+	public String getBookBId(@PathVariable int id) {
+		return this.template.getForObject(baseURL+"/books/"+id, String.class);
+	}
 }
