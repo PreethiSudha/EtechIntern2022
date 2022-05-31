@@ -2,8 +2,6 @@ package com.training.services;
 
 public class CreditCardService {
 	
-	private Object[] arraySize;
-	
 	private boolean cardNumber(Object object) {
 		
 		return false;
