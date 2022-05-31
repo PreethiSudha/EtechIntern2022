@@ -1,21 +1,26 @@
 package com.training.model;
-import com.training.model.BankAccount;
-import com.training.model.SavingsAccount;
-
 
 public class Application {
 
 	public static void main(String[] args) {
-		
-		BankAccount ramsaccount = new BankAccount(1010, "Ramesh", 50000, "Savings");
-		System.out.println(ramsaccount);
-		
-		SavingsAccount account = new SavingsAccount(650, "ramesh", 178,"joint", "rajesh");
-		
-		System.out.println(account.getAccountHolderName());
-		
-		System.out.println(account.getNominee());
+		// TODO Auto-generated method stub
 
+		SavingsAccount account=new SavingsAccount(650,"ramesh",787,"joint","rajesh");
+		System.out.println(account.getAccountHoldername());
+		System.out.println(account.getNominee());
+		
+		SavingsAccountService service=new SavingsAccountService();
+		System.out.println(service.getCustomerInfo(account)); 
+		System.out.println(service.calculateInterest(account)); 
+		
+		BankAccountService service2=new SavingsAccountService();
+		
+		//cannot access sub class method with super class reference 
+		//service2.getCustomerInfo(account)
+		
+		SavingsAccountService savingService=(SavingsAccountService)service2;
+		System.out.println((savingService).getCustomerInfo(account));
+		
 	}
 
 }

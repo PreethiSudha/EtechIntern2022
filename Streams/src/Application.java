@@ -1,5 +1,3 @@
-
-
 //import java.util.Collection;
 import java.util.List;
 import com.training.ifaces.CrudRepository;
@@ -26,8 +24,6 @@ public class Application {
 		Book maven = new Book(103, "Maven", "Paeng", 250);
 		Book html = new Book(104, "Html", "Artit", 465);
 		Book python = new Book(105, "Python", "Meen", 585);
-		
-	
 
 	CrudRepository service = new BookService();
 	

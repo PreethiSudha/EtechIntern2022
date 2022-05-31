@@ -2,7 +2,6 @@ package com.example;
 
 public class Country {
 	
-	
 	private String countryName;
 	private String placeName; 
 	private int population;
