@@ -38,7 +38,7 @@ public class App
 	    	   
 	    	   int rowAdded = mr.add(mem);
 	    	   
-	    	   mr.findAll().forEach(System.out::println);
+	    	   //mr.findAll().forEach(System.out::println);
 	    	   
 	    	   System.out.println("RowsAdded: =" +rowAdded);
 	    	   
