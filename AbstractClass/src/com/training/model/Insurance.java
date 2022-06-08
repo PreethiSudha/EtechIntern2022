@@ -9,7 +9,6 @@ public abstract class Insurance {
 	
 	public Insurance() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Insurance(int policyNumber, String policyHolderName) {
@@ -36,7 +35,5 @@ public abstract class Insurance {
 	}
 	
 	public abstract double calculatePremium();
-	
-	
 	
 }

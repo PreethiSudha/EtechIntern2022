@@ -30,14 +30,14 @@ public class HealthInsurance extends Insurance{
 	@Override
 	
 	public double calculatePremium() {
-		 double premium = 10000;
+		 double healthpremium = 10000;
 		 
 		 for (String eachItem : preExistingDiseases) {
-			 if(eachItem.equalsIgnoreCase("BP") || eachItem.equalsIgnoreCase("sugar")) {
-				 premium = 15000;
+			 if(eachItem.equalsIgnoreCase("malaria") || eachItem.equalsIgnoreCase("sugar")) {
+				 healthpremium = 15000;
 			 }
 	 }
-		return premium;
+		return healthpremium;
 	}
 
 }

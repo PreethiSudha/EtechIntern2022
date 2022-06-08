@@ -6,12 +6,10 @@ public class LifeInsurance extends Insurance {
 
 	public LifeInsurance() {
 		super();
-		
 	}
 
 	public LifeInsurance(int policyNumber, String policyHolderName) {
 		super(policyNumber, policyHolderName);
-		
 	}
 
 	public LifeInsurance(int age) {
@@ -29,13 +27,13 @@ public class LifeInsurance extends Insurance {
 	
 	@Override
 	public double calculatePremium() {
-		double premium = 10000;
+		double lifepremium = 10000;
 		if(age<50 )
 		{
-			premium = 5000;
+			lifepremium = 5000;
 		}
 		
-		return premium;
+		return lifepremium;
 	}
 
 
