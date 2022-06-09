@@ -12,7 +12,7 @@ public class TreeSetApplication {
 		Student ram = new Student(101, "Ram", 98);
 		Student shyam = new Student(102, "Shyam", 99);
 		Student maggie = new Student(103, "Maggie", 100);
-		Student femi = new Student(103, "Maggie", 100);
+		Student femi = new Student(104, "Femi", 96);
 		
 		Set<Student> set = new TreeSet<>();
 		
