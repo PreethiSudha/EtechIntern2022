@@ -1,7 +1,7 @@
 package com.training.services;
 
 public class CreditCard {
-	
+
 	private long cardNumber;
 	private String cardHolderName;
 	private double amountDue;
@@ -41,5 +41,10 @@ public class CreditCard {
 		this.amountDue = amountDue;
 	}
 	
+	@Override
+	public String toString() {
+		return "CreditCard [cardNumber=" + cardNumber + ", cardHolderName=" + cardHolderName + ", amountDue="
+				+ amountDue + "]";
+	}
 	
 }

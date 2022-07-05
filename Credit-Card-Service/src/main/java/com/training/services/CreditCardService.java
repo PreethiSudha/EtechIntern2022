@@ -1,31 +1,33 @@
 package com.training.services;
 
-public class CreditCardService {
+public class CreditCardService  {
+	public static int maxCount=4;
+	int i=0;
 	
-	private boolean cardNumber(Object object) {
+  CreditCard [] cards=new CreditCard[maxCount];
+	
+	public boolean addCard(CreditCard card) {
 		
-		return false;
-	}
-
-
-	public boolean addCard(boolean card1) {
-		
-		
-		long cardNumber;
-		if(cardNumber(arraySize[12]))  {
-			
-			return card1;
-		
+		boolean result=false;
+		if(i<maxCount && card!=null ) {
+			cards[i]=card;
+			System.out.println(i);
+			i++;
+			result=true;
 		}
-		return false;
-		
+		return result;
 	}
 	
+	public CreditCard[] getCard() {
+		
+		return cards;
+	}
+
+	public CreditCardService() {
+		super();
+		
+	}
 	
-	public CreditCard[] getCards(Object card) {
-		
-		System.out.println("CreditCard.getcardNumber");
-		
-		return getCards. getcardNumber();
-		}
+	
 }
+
