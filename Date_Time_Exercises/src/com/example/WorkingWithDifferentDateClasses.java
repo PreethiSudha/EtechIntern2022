@@ -1,8 +1,5 @@
 package com.example;
 
-import java.util.*;
-import java.sql.*;
-import java.sql.Date;
 import java.time.*;
 
 public class WorkingWithDifferentDateClasses {
