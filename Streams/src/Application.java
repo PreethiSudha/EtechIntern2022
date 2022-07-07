@@ -58,7 +58,8 @@ public class Application {
 	List<Book> secondList = service.findAll();
 	for(Book eachBook:secondList)
 	{
-		System.out.println(eachBook);
+		
+	System.out.println(eachBook);
 	}
 	
 	System.out.println("Size:" +secondList.size());
