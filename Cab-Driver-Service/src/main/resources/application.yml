@@ -1,6 +1,6 @@
 spring:
    application:
-      name: Cab_driver_service
+      name: Cab-driver-service
       
    datasource:
       url: jdbc:oracle:thin:@10.90.1.107:1521/SIT
@@ -21,4 +21,5 @@ eureka:
          defaultZone: http://localhost:8761/eureka
          
 server:
-   port: 6068
+   port: 6070
+   

@@ -6,5 +6,7 @@ import com.example.demo.entity.CabDriver;
 
 public interface CabDriverRepository extends JpaRepository<CabDriver, Integer> {
 
+	CabDriver findByDriverName(String driverName);
+
 	
 }

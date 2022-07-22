@@ -38,4 +38,8 @@ public class CabDriverService {
 			throw new RuntimeException("Element with " +id+ " Not Present");
 		}
 	}
+
+	public CabDriver findByDriverName(String driverName) {
+		return this.repo.findByDriverName(driverName);
+	}
 }
