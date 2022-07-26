@@ -11,6 +11,7 @@ import com.example.demo.services.CabDriverService;
 
 @RestController
 @RequestMapping(path="/api/v1/drivers")
+@CrossOrigin(origins="*")
 public class CabDriverController {
 	
 	@Autowired
