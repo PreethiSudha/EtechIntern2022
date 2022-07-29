@@ -69,13 +69,27 @@ public class BloodDonorController {
 //		return this.service.updateByLocation(loc);
 //	}
 	
-	@PutMapping(path="/update/{oldLoc}/{newLoc}")
-	public ResponseEntity<String> newLoc(@PathVariable("oldLoc") String oldLoc , 
-										@PathVariable("newLoc")String newLoc)
-	{
-		this.service.newLoc(oldLoc, newLoc);
-		return ResponseEntity.status(200).body("One Entity Updated");
-	}
+//	@PutMapping(path="/update/{oldLoc}/{newLoc}")
+//	public ResponseEntity<String> newLoc(@PathVariable("oldLoc") String oldLoc , 
+//										@PathVariable("newLoc")String newLoc)
+//	{
+//		this.service.newLoc(oldLoc, newLoc);
+//		return ResponseEntity.status(200).body("One Entity Updated");
+//	}
+	
+
+	@PutMapping(path="/update/{mobileNumber}/{location}")
+	 public ResponseEntity<Object>updateLocation(@PathVariable("mobileNumber") long mobileNumber,
+			 									@PathVariable("location") String updateLocation){
+		
+		int rowUpdated=this.service.updateLocation(mobileNumber, updateLocation);
+		if(rowUpdated!=0){
+			return ResponseEntity.status(200).body(rowUpdated+ " updated");
+		}
+		else{
+			return ResponseEntity.ok("Location not updated");
+		}
+}
 	
 	
 }

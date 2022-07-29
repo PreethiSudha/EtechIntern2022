@@ -11,9 +11,15 @@ import com.example.demo.repos.BloodDonorRepository;
 @Service
 public class BloodDonorService {
 
-	@Autowired
+	
 	private BloodDonorRepository repo;
 	
+	@Autowired
+	public BloodDonorService(BloodDonorRepository repo) {
+		super();
+		this.repo = repo;
+	}
+
 	public BloodDonor save(BloodDonor entity) {
 		return repo.save(entity);
 	}
@@ -42,8 +48,11 @@ public class BloodDonorService {
 //		return repo.updateByLocation(loc);
 //	}
 
-	public BloodDonor[] newLoc(String oldLoc, String newLoc ) {
-		return this.repo.modifyLocation(oldLoc, newLoc);
-	} 
+//	public BloodDonor[] newLoc(String oldLoc, String newLoc ) {
+//		return this.repo.modifyLocation(oldLoc, newLoc);
+//	}
 	
+	 public int updateLocation(long mobileNumber, String updateLocation){
+		   return this.repo.modifyLocation(mobileNumber, updateLocation);
+	 }
 }

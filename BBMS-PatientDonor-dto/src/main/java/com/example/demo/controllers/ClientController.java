@@ -38,7 +38,6 @@ public class ClientController {
 	@GetMapping(path = "/patients/json")
 	public BloodPatient[] getPatientJson() {
 		return this.template.getForObject("http://PATIENT-SERVICE-DETAILS/api/v1/patients/", BloodPatient[].class);
-
 	}
 	
 	@GetMapping(path = "/donors")
@@ -57,7 +56,6 @@ public class ClientController {
 		List<BloodDonor> detailSet = Arrays.asList(donors);
 //		Set<Donor> detailSet = Arrays.stream(donors).collect(Collectors.toSet());
 		dto.setDonors(detailSet);
-//		
 		return dto;
 	}
 	
@@ -71,8 +69,7 @@ public class ClientController {
 		dto.setPatient(patient);
 		List<BloodDonor> detailSet = Arrays.asList(donors);
 //		Set<Donor> detailSet = Arrays.stream(donors).collect(Collectors.toSet());
-		dto.setDonors(detailSet);
-//		
+		dto.setDonors(detailSet);	
 		return dto;
-}
+	}
 }
