@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class StudentServiceTestWithStub {
 
 	@Test
-	@DisplayName(value="Test FindAl Method with stub To return all the elements added")
+	@DisplayName(value="Test FindAll Method with stub To return all the elements added")
 	void testFindAllMethod() {
 		
 		StudentRepositoryStub stub = new StudentRepositoryStub();

@@ -10,4 +10,8 @@ public interface StudentRepository {
 
 	List<Student> findAll();
 	
+	int findStudentSize();
+	
+	Student addWithCondition(Student stud);
+	
 }

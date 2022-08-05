@@ -18,4 +18,18 @@ public class StudentRepositoryStub implements StudentRepository {
 		return Arrays.asList(new Student(201,"Shiva"), new Student(202, "Dhivya"));
 	}
 
+	@Override
+	public int findStudentSize() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Student addWithCondition(Student stud) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
 }

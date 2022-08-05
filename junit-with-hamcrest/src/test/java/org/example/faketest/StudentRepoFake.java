@@ -6,7 +6,7 @@ import java.util.List;
 import org.example.ifaces.StudentRepository;
 import org.example.model.Student;
 
-public class StudentRepoFake implements StudentRepository {
+public  class StudentRepoFake implements StudentRepository {
 	
 	private List<Student> list;
 	
@@ -24,5 +24,19 @@ public class StudentRepoFake implements StudentRepository {
 	public List<Student> findAll() {
 		return this.list;
 	}
+
+	@Override
+	public int findStudentSize() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Student addWithCondition(Student stud) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 
 }

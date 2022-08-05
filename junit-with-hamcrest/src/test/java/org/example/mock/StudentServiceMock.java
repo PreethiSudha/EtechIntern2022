@@ -31,4 +31,17 @@ public class StudentServiceMock implements StudentRepository {
 		assertEquals(lastAdded,entity );
 	}
 
+	@Override
+	public int findStudentSize() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public Student addWithCondition(Student stud) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 }
