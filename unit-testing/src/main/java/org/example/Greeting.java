@@ -1,5 +1,10 @@
 package org.example;
 
+/**
+ * 
+ * @author Preethi.S
+ *
+ */
 public class Greeting {
  
 	public String getMessage() {
