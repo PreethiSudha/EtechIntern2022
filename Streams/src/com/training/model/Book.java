@@ -10,6 +10,7 @@ public class Book implements Comparable<Book> {
 	public Book() {
 		super();
 	}
+	
 	public Book(int bookNumber, String bookName, String author, double bookPrice) {
 		super();
 		this.bookNumber = bookNumber;
@@ -17,6 +18,7 @@ public class Book implements Comparable<Book> {
 		this.author = author;
 		this.bookPrice = bookPrice;
 	}
+	
 	public int getBookNumber() {
 		return bookNumber;
 	}

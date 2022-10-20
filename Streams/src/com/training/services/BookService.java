@@ -1,7 +1,6 @@
 package com.training.services;
 import static java.util.stream.Collectors.*;
 import java.util.List;
-import static java.util.stream.Collectors.*;
 import java.util.function.Predicate;
 import java.util.*;
 
@@ -66,31 +65,35 @@ public class BookService implements CrudRepository {
 	public Book update(Book oldbook, Book recentbook) {
 		if(this.bookList.contains(oldbook)) {
 			int idxPos = 5;
-					this.bookList.set(idxPos, recentbook);
+			this.bookList.set(idxPos, recentbook);
 		}else {
 			add(recentbook);
 		}
 		return recentbook;
 	}
 	
-	public List<Book> getBookPrice(){
-		return this.bookList
-				.stream()
-				.filter(e->e.getBookPrice()>Price).collect(toList());		
-	}
-	
+	// Sorted method using comparing
 	public List<Book> sortedByName(){
 		return this.bookList
 				.stream()
 				.sorted(Comparator.comparing(Book::getBookName)).collect(toList());
 	}
 	
+	// Sorted method using reverse order
 	public List<Book> sortedByNumberDesc(){
 		return this.bookList
 				.stream()
 				.sorted(Comparator.reverseOrder()).collect(toList());
 	}
 	
+	// Streams using filter 
+		public List<Book> getBookPrice(){
+			return this.bookList
+					.stream()
+					.filter(e->e.getBookPrice()>Price).collect(toList());		
+	}
+	
+	// Streams using map
 	public List<String> getBookNames(){
 		return this.bookList
 				.stream()
@@ -98,13 +101,16 @@ public class BookService implements CrudRepository {
 		
 	}
 	
+	// Streams using filter , map
 	public List<String> getBookNamesGrtThanPrice(double Price){
 		return this.bookList
 				.stream()
-				.filter(e->e.getBookPrice()>Price).map(e->e.getBookName()).collect(toList());
+				.filter(e->e.getBookPrice()>Price)
+				.map(e->e.getBookName()).collect(toList());
 		
 	}
 	
+	// Not Using Streams
 	public List<Book> getBookGrtThan(double price){
 		
 	List<Book> grtThanList = new ArrayList<>();
@@ -122,6 +128,7 @@ public class BookService implements CrudRepository {
 	return grtThanList;	
 	}
 	
+	// Using Streams
 	public List<Book> findBookGrtThan1(double price){
 		
 		return this.bookList.stream().filter(e -> e.getBookPrice()>price).collect(toList());

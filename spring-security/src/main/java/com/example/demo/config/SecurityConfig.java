@@ -24,11 +24,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		
        
-		//		auth.inMemoryAuthentication()
-//		.withUser("India").password(encoder.encode("India")).roles("ADMIN")
-//		.and()
-//		.withUser("China").password(encoder.encode("China")).roles("GUEST");
-//		
+				auth.inMemoryAuthentication()
+		.withUser("India").password(encoder.encode("India")).roles("ADMIN")
+		.and()
+		.withUser("China").password(encoder.encode("China")).roles("GUEST");
+				
 		String sql = "select u.username , a.authority "
 				+ "FROM Preethi_authorities a, Preethi_users u "
 				+ " WHERE u.username = ? "

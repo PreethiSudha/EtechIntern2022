@@ -1,4 +1,5 @@
 package com.training;
+
 import static java.util.stream.Collectors.*;
 import java.util.*;
 
@@ -72,10 +73,12 @@ public class UsingStreams {
 		Book maven = new Book(103, "Maven", "Paeng", 250);
 		Book html = new Book(104, "Html", "Artit", 465);
 		Book python = new Book(105, "Python", "Meen", 585);
+		
 		Book mavenNew = new Book(103, "Maven", "Paeng", 250);
 		Book htmlNew = new Book(104, "Html", "Artit", 465);
+		Book pythonNew = new Book(105, "Python", "Meen", 585);
 		
-		List<Book> bookList = Arrays.asList(java, spring, maven, html, python, mavenNew, htmlNew);
+		List<Book> bookList = Arrays.asList(java, spring, maven, html, python, mavenNew, htmlNew, pythonNew);
 		
 		int key=6;
 		switch(key) {
@@ -95,7 +98,7 @@ public class UsingStreams {
 			findMinPrice(bookList);
 			break;
 		case 6:
-			countBooksWithGivenChar(bookList, "e");
+			countBooksWithGivenChar(bookList, "a");
 			break;
 		default:
 			break;

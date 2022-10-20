@@ -18,6 +18,23 @@ public class HandleDuplicates {
 				.collect(toList());
 				
 		System.out.println(list);
+		
+		// returns only the values which are present more than only one time
+		//[55,45]
+		
+		Set<Integer> set =
+				ageList
+				.stream()
+				.filter(e->!filtered.add(e))
+				.collect(toSet());
+		
+		System.out.println(set);
+		
+		// returns the values which are present one time and 
+		// eventhough, if the values present more than one time , 
+		// it returns the same value just at only one time
+		// [65, 85, 55, 75, 45]
+		
 	}
 
 }
