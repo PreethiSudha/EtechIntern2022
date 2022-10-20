@@ -11,7 +11,7 @@ public class AccountService {
 		
 	Logger log = Logger.getAnonymousLogger();
 		
-	public List<String>getAccounts(){
+	public List<String>getAllAccounts(){
 		//log.info("Get Accounts Called");	
 		return Arrays.asList("Ramesh", "Suresh", "Magesh");
 	}

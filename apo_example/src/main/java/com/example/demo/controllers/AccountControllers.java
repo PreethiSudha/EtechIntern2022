@@ -26,7 +26,7 @@ public class AccountControllers {
 	@GetMapping(path="/accounts")
 	public List<String> getAccounts(){
 //		logger.info("GET Accounts Method Called : ");
-		return this.service.getAccounts();
+		return this.service.getAllAccounts();
 		
 	}	
 	

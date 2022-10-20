@@ -11,6 +11,7 @@ public class AopExampleApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AopExampleApplication.class, args);
 		
+		System.out.println("*************************************************************************");
 		
 	}
 

@@ -1,12 +1,8 @@
 package com.example.demo.advices;
 
-import java.util.logging.Logger;
-
-import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
 import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
@@ -14,20 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 @Aspect
 @Component
 @Slf4j
-public class LoggingAdvice {
-	
-
-	//Logger logger = Logger.getAnonymousLogger();           //component
-	
-	@Before("execution(* com.example.demo.*.*.*(..))")
-	public void logBeforeMethod(JoinPoint jp) {
-		//logger.info(jp.getSignature().getName() + " == called == ");      //component
-		log.info(jp.getSignature().getName() + " == called == ");              //slf4j
-		
-		System.out.println("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
-	}
-	//here get signature refers as the method signature 
-	//which contains method name and the arguments it have
+public class AroundAdvice {
 	
 	@Around("execution(* com.example.demo.services.LoanService.*(..))")
 	public Object aroundAdviceMethod(ProceedingJoinPoint pjp) throws Throwable {
@@ -49,13 +32,5 @@ public class LoggingAdvice {
 	
 		return resp;
 	}
+
 }
-
-
-
-
-
-
-
-
-

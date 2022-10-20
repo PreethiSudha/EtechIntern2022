@@ -22,8 +22,10 @@ public class LoanController {
 
 	@GetMapping(path="/loans")
 	public ResponseEntity<String> getLoanDetails(){
-		double val = this.service.getInterestRate(6700);
-		return ResponseEntity.ok(val + " Per Annum");	
+		double val11 = this.service.getInterestRate(6500);
+		//double val22 = this.service.getInterestRate(6500,16500);
+		return ResponseEntity.ok(+val11 +" Per Annum ");
+		//return ResponseEntity.ok("Value1 : " +val11 + " Per Annum" +" , " +"Value2 : "  +val22 + " Per Annum");	
 	}	
 	
 }
