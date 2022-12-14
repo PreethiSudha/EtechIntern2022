@@ -10,7 +10,7 @@ public class BookService {
 	
 	public BookService() {
 		super();
-		this.bookList=new HashSet();
+		this.bookList=new HashSet<Book>();
 	}
 
 	public Set<Book> getBookList(){

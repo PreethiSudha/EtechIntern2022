@@ -14,8 +14,8 @@ public class Greeting {
 	}
 	
 	public String birthdayWish(String name) {
-		
-		return "ramesh";
+		//return "ramesh";
+		return null;
 				
 	}
 	

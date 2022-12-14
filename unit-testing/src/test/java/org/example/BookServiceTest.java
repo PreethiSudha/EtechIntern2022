@@ -56,7 +56,7 @@ public class BookServiceTest {
 	@Test
 	void testAddNotDuplicateValue() {
 		
-		int actual1=service.addBook(new Book(101,"Java",7865));
+		// int actual1=service.addBook(new Book(101,"Java",7865));
 		int actual2=service.addBook(new Book(101,"Java",7865));
 
 		int expected=0;

@@ -2,6 +2,7 @@ package org.example;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -29,9 +30,10 @@ public class GreetingTest {
 		
 		Greeting grtObj = new Greeting();
 		
-		String actual = grtObj.birthdayWish("ramesh");
+		String actual = grtObj.birthdayWish("ram");
 		
-		assertNotNull(actual);
+		//assertNotNull(actual);
+		assertNull(actual);
 	}
 	
 	@Test
